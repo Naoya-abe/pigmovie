@@ -1,0 +1,9 @@
+.movie-detail {
+  display: flex;
+  flex-direction: row;
+
+  img {
+    max-height: 195px;
+    margin-right: 16px;
+  }
+}
