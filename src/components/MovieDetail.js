@@ -4,13 +4,12 @@ import {connect} from 'react-redux';
 import '../styles/MovieDetail.scss';
 
 const MovieDetail = props => {
-  console.log(props);
   if (props.selectedMovie) {
     return (
       <React.Fragment>
         <h3>Movie detail is</h3>
         <div className="movie-detail">
-          <img src={props.selectedMovie.image} />
+          <img src={props.selectedMovie.image} alt="movieImage" />
           <div className="movie-caption">
             <p>Title: {props.selectedMovie.title}</p>
             <p>Director: {props.selectedMovie.director}</p>
@@ -26,11 +25,12 @@ const MovieDetail = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
-
   return {
     selectedMovie: state.selectedMovie,
   };
 };
 
-export default connect(mapStateToProps)(MovieDetail);
+export default connect(
+  mapStateToProps,
+  null
+)(MovieDetail);
